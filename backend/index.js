@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 mongoose.set('strictQuery',true);
+mongoose.connect("mongodb://127.0.0.1:27017/blogDB" ,{useNewUrlParser :true, useUnifiedTopology :true});
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster-0.lnlf8nt.${process.env.DB_HOST}/userDB`,
   {
     useNewUrlParser: true,
